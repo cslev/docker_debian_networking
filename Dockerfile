@@ -22,13 +22,14 @@ ENV DEPS tshark \
          knot-dnsutils \
          htop \
 	     iproute2 \
-	     iptables
+	     iptables \
+         telnet
 
 COPY bashrc_template /root/.bashrc
 COPY sources.list /etc/apt/
 SHELL ["/bin/bash", "-c"]
 RUN apt-get update && \
-    apt-get dist-upgrade && \
+    DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends $DEPS && \
     apt-get autoremove --purge -y && \
     apt-get clean && \
