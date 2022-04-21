@@ -19,13 +19,10 @@ ENV DEPS tshark \
          dnsutils \
          hping3 \
          ethtool \
-<<<<<<< HEAD
          knot-dnsutils \
-         htop
-=======
-	 iproute2 \
-	iptables
->>>>>>> 95022e291d3eb253725992cda19fc621f82ff291
+         htop \
+	     iproute2 \
+	     iptables
 
 COPY bashrc_template /root/.bashrc
 COPY sources.list /etc/apt/
