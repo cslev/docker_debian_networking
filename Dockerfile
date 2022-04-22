@@ -23,7 +23,9 @@ ENV DEPS tshark \
          htop \
 	     iproute2 \
 	     iptables \
-         telnet
+         telnet \
+         ca-certificates \
+         openssl 
 
 COPY bashrc_template /root/.bashrc
 COPY sources.list /etc/apt/
