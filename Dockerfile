@@ -1,31 +1,31 @@
-FROM debian:bullseye
+FROM debian:bookworm-slim
 LABEL maintainer="cslev <cslev@gmx.com>"
 
-ENV DEPS tshark \
-	     tcpdump \
-         nano \
-         tar \
-         bzip2 \
-         wget \
-         curl \
-         python3 \
-         python3-scapy \
-         iperf3 \
-         iperf \
-         net-tools \
-         iputils-ping \
-         arping \
-         nmap \
-         dnsutils \
-         hping3 \
-         ethtool \
-         knot-dnsutils \
-         htop \
-	     iproute2 \
-	     iptables \
-         telnet \
-         ca-certificates \
-         openssl 
+ENV DEPS="tshark \
+    tcpdump \
+    nano \
+    tar \
+    bzip2 \
+    wget \
+    curl \
+    python3 \
+    python3-scapy \
+    iperf3 \
+    iperf \
+    net-tools \
+    iputils-ping \
+    arping \
+    nmap \
+    dnsutils \
+    hping3 \
+    ethtool \
+    knot-dnsutils \
+    htop \
+    iproute2 \
+    iptables \
+    telnet \
+    ca-certificates \
+    openssl"
 
 COPY bashrc_template /root/.bashrc
 COPY sources.list /etc/apt/
